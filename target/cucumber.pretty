@@ -1,0 +1,128 @@
+
+@regression
+Scenario: user register with valid data        [90m# src/main/resources/features/F01_register.feature:3[0m
+  [32mWhen [0m[32muser click the Register link[0m            [90m# org.example.setpDefintions.D01_registerStepDef.clickRegisterLink()[0m
+  [32mWhen [0m[32muser enter gender[0m                       [90m# org.example.setpDefintions.D01_registerStepDef.gender()[0m
+  [32mAnd [0m[32muser enter firstname and lastname[0m        [90m# org.example.setpDefintions.D01_registerStepDef.fullUserName()[0m
+  [32mAnd [0m[32muser enter date of birth[0m                 [90m# org.example.setpDefintions.D01_registerStepDef.date_ofBirth()[0m
+  [32mAnd [0m[32muser enter email[0m                         [90m# org.example.setpDefintions.D01_registerStepDef.email()[0m
+  [32mAnd [0m[32muser enter company name[0m                  [90m# org.example.setpDefintions.D01_registerStepDef.companyName()[0m
+  [32mAnd [0m[32muser enter password and Reenter Password[0m [90m# org.example.setpDefintions.D01_registerStepDef.password()[0m
+  [32mThen [0m[32muser click register button[0m              [90m# org.example.setpDefintions.D01_registerStepDef.registerButton()[0m
+  [32mAnd [0m[32muser have a welcome message with color[0m   [90m# org.example.setpDefintions.D01_registerStepDef.AssertionResulte()[0m
+
+@regression
+Scenario: user switch between currencies        [90m# src/main/resources/features/F03_changeCurrency.feature:3[0m
+  [32mWhen [0m[32muser click on the currency dropdown-list[0m [90m# org.example.setpDefintions.D03_changeCurrencyStepDef.click_Currency()[0m
+
+@regression
+Scenario: user hover categories and choose one of them    [90m# src/main/resources/features/F03_hoverCategories.feature:3[0m
+  [32mWhen [0m[32muser hover category and select subcategory[0m         [90m# org.example.setpDefintions.D03_hoverCategories.user_hover_category()[0m
+  [32mThen [0m[32muser get subCategory"Desktops"displayed as a title[0m [90m# org.example.setpDefintions.D03_hoverCategories.assertPageTitle()[0m
+
+@regression
+Scenario: user using search input for find product                [90m# src/main/resources/features/F04_searchByName.feature:3[0m
+  [32mWhen [0m[32muser write product name 'Nikon D5500 DSLR' in search input[0m [90m# org.example.setpDefintions.D04_SearchByNameSetupDef.write_ProductName()[0m
+  [32mAnd [0m[32muser click the search button[0m                                [90m# org.example.setpDefintions.D04_SearchByNameSetupDef.clickSearchButton()[0m
+  [32mThen [0m[32muser find the product he looks for it 'Nikon D5500 DSLR'[0m   [90m# org.example.setpDefintions.D04_SearchByNameSetupDef.assertResulte()[0m
+
+@regression
+Scenario: user using search input for find product by SKU   [90m# src/main/resources/features/F05_searchBySKU.feature:3[0m
+  [32mWhen [0m[32muser write product name ' M8_HTC_5L' in search input[0m [90m# org.example.setpDefintions.D05_SearchBySKUSetupDef.write_ProductName()[0m
+  [32mAnd [0m[32muser click the search button to find ele[0m              [90m# org.example.setpDefintions.D05_SearchBySKUSetupDef.clickSearchButton()[0m
+  [32mThen [0m[32muser find the product he looks for it 'M8_HTC_5L'[0m    [90m# org.example.setpDefintions.D05_SearchBySKUSetupDef.assertResulte()[0m
+
+@regression
+Scenario: user opens face book link                      [90m# src/main/resources/features/F06_followUs.feature:3[0m
+  [32mWhen [0m[32muser open facebook link[0m                           [90m# org.example.setpDefintions.D06_follow_Us_stepDef.userOpenLinkFacebook()[0m
+  [32mThen [0m[32mfacebook page of nopCommerce is opened in new tab[0m [90m# org.example.setpDefintions.D06_follow_Us_stepDef.facebookAssertion()[0m
+
+@regression
+Scenario: user opens twitter link                       [90m# src/main/resources/features/F06_followUs.feature:6[0m
+  [32mWhen [0m[32muser open twitter link[0m                           [90m# org.example.setpDefintions.D06_follow_Us_stepDef.userOpenLinkTwitter()[0m
+  [32mThen [0m[32mtwitter page of nopCommerce is opened in new tab[0m [90m# org.example.setpDefintions.D06_follow_Us_stepDef.twitterAssertion()[0m
+
+@regression
+Scenario: user opens res  link       [90m# src/main/resources/features/F06_followUs.feature:9[0m
+  [32mWhen [0m[32muser open res link[0m            [90m# org.example.setpDefintions.D06_follow_Us_stepDef.userOpenLink_Res()[0m
+  [31mThen [0m[31mNew Store News Page is opened[0m [90m# org.example.setpDefintions.D06_follow_Us_stepDef.rssAssertion()[0m
+      [31mjava.lang.AssertionError: expected [https://demo.nopcommerce.com/new-online-store-is-open] but found [https://demo.nopcommerce.com/news/rss/1]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.setpDefintions.D06_follow_Us_stepDef.rssAssertion(D06_follow_Us_stepDef.java:53)
+	at ✽.New Store News Page is opened(file:///C:/Users/DELL/Desktop/E-commerceProject-shorouqibrahiem/src/main/resources/features/F06_followUs.feature:11)
+[0m
+
+@regression
+Scenario: user opens YouTube link                       [90m# src/main/resources/features/F06_followUs.feature:12[0m
+  [32mWhen [0m[32muser open YouTube link[0m                           [90m# org.example.setpDefintions.D06_follow_Us_stepDef.userOpenLink_youtube()[0m
+  [32mThen [0m[32myoutube page of nopCommerce is opened in new tab[0m [90m# org.example.setpDefintions.D06_follow_Us_stepDef.youTubeAssertion()[0m
+
+@regression
+Scenario: logged user  click on the wishList element "Build your own computer" [90m# src/main/resources/features/F07_addProductToSh_card.feature:8[0m
+  [32mWhen [0m[32muser click add First product"HTC One M8 Android L 5.0 Lollipop"[0m         [90m# org.example.setpDefintions.D07_addProductToShCard_stepDef.click_addFirstItem()[0m
+  [32mThen [0m[32muser add item open page for the item and found details[0m                  [90m# org.example.setpDefintions.D07_addProductToShCard_stepDef.open_ItemSuccessItem1()[0m
+
+@regression
+Scenario: logged user  click on the wishList element "Apple MacBook Pro 13-inch"                 [90m# src/main/resources/features/F07_addProductToSh_card.feature:12[0m
+  [32mWhen [0m[32muser click add second product "Apple MacBook Pro 13-inch"[0m                                 [90m# org.example.setpDefintions.D07_addProductToShCard_stepDef.click_WishListItem2()[0m
+  [32mThen [0m[32muser add item open page for the item and found details"Apple MacBook Pro 13-inch"url page[0m [90m# org.example.setpDefintions.D07_addProductToShCard_stepDef.open_ItemSuccessItem2()[0m
+
+@regression
+Scenario: user click first slider               [90m# src/main/resources/features/F08_homeSliders.feature:3[0m
+  [32mWhen [0m[32muser Click the first_slider[0m              [90m# org.example.setpDefintions.D08_homeSliders_stepDef.click_FirstSlider()[0m
+  [31mThen [0m[31muser open the product which it clickable[0m [90m# org.example.setpDefintions.D08_homeSliders_stepDef.assert_firstSlider()[0m
+      [31mjava.lang.AssertionError: expected [https://demo.nopcommerce.com/Iphone_s6] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.setpDefintions.D08_homeSliders_stepDef.assert_firstSlider(D08_homeSliders_stepDef.java:27)
+	at ✽.user open the product which it clickable(file:///C:/Users/DELL/Desktop/E-commerceProject-shorouqibrahiem/src/main/resources/features/F08_homeSliders.feature:5)
+[0m
+
+@regression
+Scenario: user click second slider                [90m# src/main/resources/features/F08_homeSliders.feature:7[0m
+  [32mWhen [0m[32muser Click the second_slider[0m               [90m# org.example.setpDefintions.D08_homeSliders_stepDef.click_Consider()[0m
+  [31mThen [0m[31muser open the product 2 which it clickable[0m [90m# org.example.setpDefintions.D08_homeSliders_stepDef.assert_SecondSlider()[0m
+      [31mjava.lang.AssertionError: expected [https://demo.nopcommerce.com/Nokia_Lumia_1020] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.setpDefintions.D08_homeSliders_stepDef.assert_SecondSlider(D08_homeSliders_stepDef.java:40)
+	at ✽.user open the product 2 which it clickable(file:///C:/Users/DELL/Desktop/E-commerceProject-shorouqibrahiem/src/main/resources/features/F08_homeSliders.feature:9)
+[0m
+
+@regression
+Scenario: success message is visible after add product to wishlist [90m# src/main/resources/features/F09_wishList.feature:3[0m
+  [32mWhen [0m[32muser add product to wishlist[0m                                [90m# org.example.setpDefintions.D09_wishListStepDef.addTo_wishList()[0m
+  [32mThen [0m[32mwishlist notification success is visible[0m                    [90m# org.example.setpDefintions.D09_wishListStepDef.success_message()[0m
+
+@regression
+Scenario: number of wishlist items in home page is increased      [90m# src/main/resources/features/F09_wishList.feature:7[0m
+  [32mWhen [0m[32muser add product to wishlist[0m                               [90m# org.example.setpDefintions.D09_wishListStepDef.addTo_wishList()[0m
+  [32mThen [0m[32mwishlist notification success is visible[0m                   [90m# org.example.setpDefintions.D09_wishListStepDef.success_message()[0m
+  [32mAnd [0m[32muser get the  number of wishlist items after adding product[0m [90m# org.example.setpDefintions.D09_wishListStepDef.getNumber()[0m
+  [32mThen [0m[32mnumber of wishlist items increased[0m                         [90m# org.example.setpDefintions.D09_wishListStepDef.itemIncreased()[0m
+
+@regression
+Scenario: added products are displayed on wishlist page           [90m# src/main/resources/features/F09_wishList.feature:13[0m
+  [32mWhen [0m[32muser add product to wishlist[0m                               [90m# org.example.setpDefintions.D09_wishListStepDef.addTo_wishList()[0m
+  [32mThen [0m[32mwishlist notification success is visible[0m                   [90m# org.example.setpDefintions.D09_wishListStepDef.success_message()[0m
+  [32mAnd [0m[32muser get the  number of wishlist items after adding product[0m [90m# org.example.setpDefintions.D09_wishListStepDef.getNumber()[0m
+  [32mAnd [0m[32muser go to wishList page[0m                                    [90m# org.example.setpDefintions.D09_wishListStepDef.wishListPage()[0m
+
+@regression
+Scenario: user login with valid Data            [90m# src/main/resources/features/f02_login.feature:5[0m
+  [32mGiven [0m[32muser go to login url[0m                    [90m# org.example.setpDefintions.D02_loginStepDef.navigate_to_url()[0m
+  [32mWhen [0m[32muser login with valid email and password[0m [90m# org.example.setpDefintions.D02_loginStepDef.login_withEmail_password()[0m
+  [32mThen [0m[32muser click on the login button[0m           [90m# org.example.setpDefintions.D02_loginStepDef.loginButton()[0m
